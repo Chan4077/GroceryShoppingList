@@ -1,4 +1,4 @@
-from utils import Utils
+from archived.utils import Utils
 
 myRecipeDict = {}
 myWeeklyNeedsList = []

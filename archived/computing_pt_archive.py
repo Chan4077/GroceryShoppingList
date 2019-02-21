@@ -3,10 +3,10 @@ from tkinter import ttk
 from tkinter import messagebox as mbox
 from tkinter import simpledialog
 
-from new_grocery_item_dialog import NewGroceryItemDialog
-from about_dialog import AboutDialog
+from archived.new_grocery_item_dialog import NewGroceryItemDialog
+from archived.about_dialog import AboutDialog
 
-from utils import Utils
+from archived.utils import Utils
 
 def cmd_new_grocery_item():
     print("Adding a new shopping item...")
