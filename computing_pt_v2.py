@@ -81,60 +81,31 @@ for i in range(0, 25):
 
 root.minsize(width=480, height=270)
 
+# The menu bar
 menubar = Menu(root)
 
+# File menu
 filemenu = Menu(menubar, name="file", tearoff=0)
 filemenu.add_command(label="Import from Spreadsheet...", underline=0, accelerator="Command-o",
                      command=import_from_spreadsheet)
 root.bind_all("<Command-o>", import_from_spreadsheet)
 
 filemenu.add_command(label="Export Results...", underline=0, accelerator="Command-e", command=export_results)
-# filemenu.add_separator()
-# filemenu.add_command(label="Delete Grocery List...", underline=0,
-#                      accelerator="Command-BackSpace", command=cmd_delete_grocery_list)
-# filemenu.add_command(label="Delete Grocery Item...", underline=0,
-#                      accelerator="Option-Command-BackSpace", command=cmd_delete_grocery_item)
 menubar.add_cascade(label="File", menu=filemenu, underline=0)
 
-# editmenu = tkinter.Menu(menubar, tearoff=0)
-# editmenu.add_command(label="Undo", underline=0, accelerator="Ctrl+U",
-#                      command=cmd_undo)
-# editmenu.add_separator()
-# editmenu.add_command(label="Cut", underline=2, accelerator="Ctrl+X",
-#                      command=lambda: print("Cut"))
-# editmenu.add_command(label="Copy", underline=0, accelerator="Ctrl+C",
-#                      command=lambda: print("Copy"))
-# editmenu.add_command(label="Paste", underline=0, accelerator="Ctrl+V",
-#                      command=lambda: print("Paste"))
-# editmenu.add_command(label="Delete", underline=2,
-#                      command=lambda: print("Delete"))
-# editmenu.add_separator()
-# editmenu.add_command(label="Select All", underline=7, accelerator="Ctrl+A",
-#                      command=lambda: print("Select All"))
-# menubar.add_cascade(label="Edit", menu=editmenu, underline=0)
+# Edit menu
 editmenu = Menu(menubar, name="edit", tearoff=0)
 menubar.add_cascade(menu=editmenu, label="Edit", underline=0)
 
+# View menu
 viewmenu = Menu(menubar, name="view", tearoff=0)
-# viewfontsmenu = tkinter.Menu(viewmenu, tearoff=0)
-# viewfontsmenu.add_command(label="Reset To Default", accelerator="Command+0")
-# viewfontsmenu.add_command(label="Increase By 5%", accelerator="Command++")
-# viewfontsmenu.add_command(label="Decrease By 5%", accelerator="Command+-")
-# viewappearancemenu = tkinter.Menu(viewmenu, tearoff=0)
-# viewappearancemenu.add_cascade(
-#     menu=viewfontsmenu, label="Font Size", underline=0, state="disabled")
-# viewappearancemenu.add_separator()
-# viewappearancemenu.add_checkbutton(label="Read-only Mode")
-# viewappearancemenu.add_checkbutton(label="Dark Mode", state="disabled")
-# viewmenu.add_separator()
-# viewmenu.add_cascade(menu=viewappearancemenu, label="Appearance", underline=0)
-# viewmenu.add_cascade(menu=viewfontsmenu, label="Font Size", underline=0)
-# viewmenu.add_separator()
 menubar.add_cascade(menu=viewmenu, label="View", underline=0)
 
+# Window menu
 windowmenu = Menu(menubar, name="window", tearoff=0)
 menubar.add_cascade(menu=windowmenu, label="Window", underline=0)
 
+# Help menu
 helpmenu = Menu(menubar, tearoff=0)
 helpmenu.add_command(label="Keyboard Shortcuts", state="disabled")
 menubar.add_cascade(label="Help", menu=helpmenu, underline=0)
