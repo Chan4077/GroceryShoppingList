@@ -11,20 +11,35 @@ EXTRAS
 # import random
 from tkinter import ttk, Tk, Menu
 from tkinter.filedialog import askopenfilename
+from tkinter.simpledialog import messagebox
+from random import shuffle
+import csv
 
 
-def import_from_spreadsheet(event):
+def import_from_spreadsheet(event=None):
     print("Event: ", event)
-    # See https://www.reddit.com/r/learnpython/comments/3loul5/only_showing_certain_filetypes_in_filedialog/cv9eaey for more info
+    # See
+    # https://www.reddit.com/r/learnpython/comments/3loul5/only_showing_certain_filetypes_in_filedialog/cv9eaey
+    # for more info
     ftypes = [
         ("Legacy Excel worksheet", "*.xls"),
         ("Excel workbook", "*.xlsx"),
         ("Comma-separated value file", "*.csv")
     ]
-    # root.update()
+    root.update()
     filename = askopenfilename(parent=root, title="Import spreadsheet", filetypes=ftypes)
-    menubar.entryconfigure("File", state="normal")
-    print(filename)
+    root.update()
+    try:
+        # print(filename)
+        with open(filename, 'r') as f:
+            reader = csv.reader(f)
+            spreadsheet_list = list(reader)
+            spreadsheet_list.pop(0)
+            print("Spreadsheet list: ", spreadsheet_list)
+            shuffle(spreadsheet_list)
+            print("Shuffled spreadsheet list: ", spreadsheet_list)
+    except FileNotFoundError:
+        messagebox.showerror("Spreadsheet not found", "Please select a spreadsheet to import!")
 
 
 def sort_separate_ability(spreadsheet_list):
@@ -69,7 +84,8 @@ root.minsize(width=480, height=270)
 menubar = Menu(root)
 
 filemenu = Menu(menubar, name="file", tearoff=0)
-filemenu.add_command(label="Import from Spreadsheet...", underline=0, accelerator="Command-o", command=import_from_spreadsheet)
+filemenu.add_command(label="Import from Spreadsheet...", underline=0, accelerator="Command-o",
+                     command=import_from_spreadsheet)
 root.bind_all("<Command-o>", import_from_spreadsheet)
 
 filemenu.add_command(label="Export Results...", underline=0, accelerator="Command-e", command=export_results)
