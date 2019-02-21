@@ -1,5 +1,7 @@
 # import tkSimpleDialog
-from tkinter import *
+from tkinter.ttk import *
+from tkinter import TkVersion
+from tkinter.constants import W
 from tkinter import simpledialog as dialog
 from tkinter import messagebox as mbox
 from sys import version
