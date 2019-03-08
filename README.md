@@ -8,3 +8,18 @@ To run the code, use the `computing_pt_v2.py` file.
 
 - [`xlwt`](https://pypi.org/project/xlwt/) for writing Excel files (`.xls`)
 - [`xlr`](https://pypi.org/project/xlrd/) for reading Excel files (`.xls`)
+
+## Spreadsheet template
+
+For an example of how the data should be imported, please see the below code for an example:
+
+```csv
+Name,Ability,Gender
+Name #1,L/M/H,F/M
+```
+
+Column value | Description
+---|---
+Name | A column of names
+Ability | A column of abilities (L: Low, M: Medium, H: High)
+Gender | A column of genders (F: Female, M: Male)
