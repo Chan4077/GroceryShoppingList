@@ -115,7 +115,8 @@ class SortResultsWindow:
 
     def export_results(self, event=None):
         ftypes = [
-            ("Legacy Excel worksheet", "*.xls"),
+            # TODO: Reimplement XLS support
+            # ("Legacy Excel worksheet", "*.xls"),
             # TODO: Implement XLSX support
             # xlwt does not support xlsx files for now
             # ("Excel workbook", "*.xlsx"),
