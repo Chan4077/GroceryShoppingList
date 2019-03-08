@@ -9,7 +9,7 @@ Alternatively, use the GitHub version on https://github.com/Chan4077/computing-p
 ## Libraries needed
 
 - [`xlwt`](https://pypi.org/project/xlwt/) for writing Excel files (`.xls`)
-- [`xlr`](https://pypi.org/project/xlrd/) for reading Excel files (`.xls`)
+- [`xlrd`](https://pypi.org/project/xlrd/) for reading Excel files (`.xls`)
 
 ## Spreadsheet template
 
