@@ -4,6 +4,8 @@
 
 To run the code, use the `computing_pt_v2.py` file.
 
+Alternatively, use the GitHub version on https://github.com/Chan4077/computing-pt.
+
 ## Libraries needed
 
 - [`xlwt`](https://pypi.org/project/xlwt/) for writing Excel files (`.xls`)
