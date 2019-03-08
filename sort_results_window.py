@@ -3,7 +3,7 @@ Window to represent the results of the sort
 """
 import csv
 from tkinter import Menu, Tk, ttk, StringVar
-from tkinter.constants import N, S, E, W
+from tkinter.constants import N, S, E, W, CENTER
 from tkinter.filedialog import asksaveasfilename
 from tkinter.messagebox import showerror
 from tkinter.simpledialog import askinteger
@@ -37,11 +37,11 @@ class SortResultsWindow:
 
         self.sort_opts_moved_frame = ttk.Frame(self.main_frame)
         self.sort_opts_moved_frame.grid(column=0, row=1, sticky=(N, S, E, W))
-        self.sort_opts_moved_frame_title_label = ttk.Label(self.sort_opts_moved_frame, text="Heads up!")
-        self.sort_opts_moved_frame_title_label.grid(column=0, row=0)
+        # self.sort_opts_moved_frame_title_label.grid(column=0, row=0)
         self.sort_opts_moved_frame_message_label = ttk.Label(self.sort_opts_moved_frame,
                                                              text="Sorting options have moved to the file menu!\nTo access the sorting options, go to File > Sort By.")
-        self.sort_opts_moved_frame_message_label.grid(column=0, row=1)
+        # self.sort_opts_moved_frame_message_label.grid(column=0, row=1)
+        self.sort_opts_moved_frame_message_label.place(relx=0.5, rely=0.5, anchor=CENTER)
         """
         self.sort_by_frame = ttk.Frame(self.main_frame)
         self.sort_by_frame.grid(column=0, row=1, sticky=(N, S, E, W))
