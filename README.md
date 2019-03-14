@@ -42,3 +42,14 @@ Ability | A column of abilities (L: Low, M: Medium, H: High)
 Gender | A column of genders (F: Female, M: Male)
 
 Alternatively, see the [mock data CSV file](computing_pt_mock_data_v2.csv) for example.
+
+## Supported file types
+
+This script supports the following file types:
+
+- CSV
+- XLS
+
+And supports outputting the following file types:
+
+- CSV
